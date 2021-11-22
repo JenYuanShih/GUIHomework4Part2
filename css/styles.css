@@ -1,0 +1,103 @@
+/*
+File: styles.css
+Purpose: Styling for contents in index.html. Including Header, Forms, Tables, Error messages, UI Slider, Table tabs. 
+Author: Jen Yuan Shih (JenYuan_Shih@student.uml.edu)
+Last Updated: 11/21/2021 9:00PM EST
+*/
+
+body{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/*For any items in formTableWrapper class, the element will be display as inline-block and align at the top rather than at the buttom*/
+.formTableWrapper{
+    display: inline-block;
+    vertical-align: top;
+}
+
+/*Creating border around the form*/
+#formWrapper{
+    border: 1px solid black;
+    width: 230px;
+    padding: 6px;
+}
+
+/*Aligning the elements within tableForm to the center*/
+#tableForm{
+    margin: 5px auto;
+    width: 100%;
+    text-align:center;
+}
+
+#tabButtons{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+#tabMsg{
+    text-align:center;
+    font-style: italic;
+    color: darkolivegreen;
+}
+
+#deleteTabForm{
+    text-align: center;
+}
+
+/*Aligning the input element to the center of form-box class, adding margin on top of buttom of the class*/
+.form-box{
+    text-align: center;
+    height: 85px;
+    padding-bottom: 30px;
+}
+
+/*Changing msg to the center of the form and the color to red*/
+#msg{
+    text-align:center;
+    font-weight: bold;
+    color: green;
+}
+
+/*Wrapping the table in white border, and aligning all text in the table to the right*/
+#tableWrapper table{
+    border:3px solid white;
+    border-collapse: collapse;
+    text-align: right;
+}
+
+/*Adding white border to each individual table data, and minimum padding for formatting*/
+#tableWrapper td, th{
+    border: 1px solid white;
+    padding-left: min(5px)
+}
+
+/*Centering the submit button*/
+#submit_button{
+    text-align: center;
+}
+
+/*Formatting the jQuery UI slider to fit the input field 
+.ui-slider{
+    width: 70%;
+    margin: auto;
+    height: 30px;
+}
+
+/*Any table data with headerCell class will have black background color and white text*/
+.headerCell{
+    background-color: black;
+    color: white;
+}
+
+/*Any table data with greyCell class will have a lightgrey background color*/
+.greyCell{
+    background-color: lightgray;
+}
+
+/*Modify error message color scheme*/
+.error{
+    display: inline-block;
+    color: red;
+}

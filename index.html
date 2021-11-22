@@ -1,0 +1,82 @@
+<!--
+    File: index.html
+    Purpose: GUI Assignment Homework 4. Generating an dynamic multiplicative table basing on user inputs, using HTML, CSS, and JavaScript
+    Adding Jquery UI Sliders and Tabs into the website. 
+    Author: Jen Yuan Shih (JenYuan_Shih@student.uml.edu)
+    Last Updated: 11/21/2021 9:00PM EST
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dynamic Multiplicative Table Generator</title>
+    <meta charset="utf-8">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <div>
+        <h1>Dynamic Multiplicative Table Generator</h1>
+    </div>
+    <!-- HTML Forms, accept user inputs that which will be send to JavaScript for table generation upon submission. -->
+    <!-- Currently accept 4 inputs (Column Min, Column Max, Row Min, Row Max)-->
+    <div>
+        <div id="formWrapper" class="formTableWrapper">
+            <form id="tableForm" autocomplete="off">
+                <div class = "form-box">
+                    <label for="row_min">Min Column Value:</label>
+                    <input type = "text" id="col_min" value='0' name ="col_min" class = "tableInput" oninput = "dynamicInput('#col_min', '#col_min_slider')">
+                    <div id="col_min_slider" class = "ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"></div>
+                </div>
+                <div class = "form-box">
+                    <label for="col_max">Max Column Value:</label>
+                    <input type = "text" name ="col_max" value='0' id="col_max" class = "tableInput" oninput = "dynamicInput('#col_max', '#col_max_slider')">
+                    <div id="col_max_slider" class = "ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"></div>
+                </div>
+                <div class = "form-box">
+                    <label for="row_min">Min Row Value:</label>
+                    <input type = "text" name ="row_min" value='0' id="row_min" class = "tableInput" oninput = "dynamicInput('#row_min', '#row_min_slider')">
+                    <div id="row_min_slider" class = "ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"></div>
+                </div>
+                <div class = "form-box">
+                    <label for="row_max">Max Row Value:</label>
+                    <input type = "text" name ="row_max" value='0' id="row_max" class = "tableInput" oninput = "dynamicInput('#row_max', '#row_max_slider')">
+                    <div id="row_max_slider" class = "ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"></div>
+                </div>
+            </form>
+            <!-- Control for saving and deleting table tabs -->
+            <div id="tabButtons">
+                <button type="button" id = "saveTableTab">Save Table</button>
+                <button type="button" id = "deleteTableTab">Delete Table</button>
+            </div>
+            <form id = "deleteTabForm">
+                <input type = "text" name = "deleteTabIndex" id = "deleteTabIndex">
+            </form>
+            <!-- Instruction on how to delete tables properly -->
+            <div id = "tabMsg">
+                <p>Enter value corrosponds to the tab to delete (1st tabs start from index 0)</p>
+                <p>To Delete Multiple tabs, enter tab values separated by commas (ex: 0, 2 to delete 1st and 3rd tabs)</p>
+            </div>
+        </div>
+        
+        <!-- An currently empty div that will be holding the dynamically generated table from JavaScript-->
+        <div id="tableWrapper" class="formTableWrapper">
+        </div>
+    </div>
+    <!-- An currently empty div that will be used to store tabs to store saved tables and the content -->
+    <div id="tableTabs">
+        <ul id="tabsHeader">
+        </ul>
+        <div id="tabsContent">
+        </div>
+    </div>
+    <!-- An currently empty div that will be holding the dynamically generated table from JavaScript-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+
+    <script src="js/table.js"></script>
+</body>
+</html>
